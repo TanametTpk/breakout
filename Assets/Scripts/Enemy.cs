@@ -34,5 +34,10 @@ public class Enemy : MonoBehaviour, Attackable, Damagable
         if (other.gameObject.tag.Equals("ball")) {
             WasAttacked(1);
         }
+
+        if (other.gameObject.tag.Equals("Player")) {
+            Damagable player = other.gameObject.GetComponent<Damagable>();
+            Attack(player);
+        }
     }
 }

@@ -20,4 +20,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movingDirection * playerInfo.speed, ForceMode2D.Force);
     }
 
+    public Vector2 GetMovingDirection() {
+        return movingDirection;
+    }
 }

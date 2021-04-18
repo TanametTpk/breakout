@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, Damagable
     public float speed;
     public int energy;
     public float knockbackForce = 10;
+    public bool isInvulnerable = false;
     public UnityEvent OnDead;
 
     public bool IshaveEnergy() {
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour, Damagable
     }
 
     public void WasAttacked(int damage) {
+        if (isInvulnerable) return;
+        
         hp -= damage;
         if (hp < 0) hp = 0;
         if (IsDead()) OnDead.Invoke();
@@ -37,9 +40,6 @@ public class Player : MonoBehaviour, Damagable
         if (other.gameObject.tag.Equals("Enemy")) {
             Vector2 difference = other.transform.position - transform.position;
             knockback.perform(difference.normalized * -knockbackForce);
-            
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            enemy.Attack(this);
         }
         else if (other.gameObject.tag.Equals("ball")) {
             Destroy(other.gameObject);
