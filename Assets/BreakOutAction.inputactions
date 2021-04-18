@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "StartGame",
+                    "name": "Shoot",
                     "type": "Button",
                     "id": "4484a443-b823-487e-9d4c-ddd25106fcb2",
                     "expectedControlType": "Button",
@@ -89,11 +89,11 @@
                 {
                     "name": "",
                     "id": "436e9557-e798-4daf-a13b-b628f17b53f1",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "StartGame",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

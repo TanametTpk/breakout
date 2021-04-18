@@ -5,14 +5,12 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour, Damagable
 {
-    public PlayerController controller;
+    public Knockback knockback;
     public int hp;
     public float speed;
     public int energy;
     public float knockbackForce = 10;
-    public float knockbackDuration = 0.3f;
     public UnityEvent OnDead;
-    public bool isKnockBack = false;
 
     public bool IshaveEnergy() {
         return energy > 0;
@@ -31,7 +29,11 @@ public class Player : MonoBehaviour, Damagable
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Enemy")) {
             Vector2 difference = other.transform.position - transform.position;
-            controller.Knockback(difference.normalized * -knockbackForce, knockbackDuration);
+            knockback.perform(difference.normalized * -knockbackForce);
+        }
+        else if (other.gameObject.tag.Equals("ball")) {
+            Destroy(other.gameObject);
+            this.energy += 1;
         }
     }
 }

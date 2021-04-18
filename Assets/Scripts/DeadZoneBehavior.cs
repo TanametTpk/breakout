@@ -7,11 +7,9 @@ public class DeadZoneBehavior : MonoBehaviour
 {
     public UnityEvent OnHit;
 
-    public BallBehavior ball;
-
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("ball")) {
-            ball.Reset();
+            Destroy(other.gameObject);
             OnHit.Invoke();
         }
     }
