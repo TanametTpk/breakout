@@ -6,14 +6,16 @@ using UnityEngine;
 public class BallBehavior : MonoBehaviour
 {
     public Rigidbody2D rb;
-
-    private void OnCollisionEnter2D(Collision2D other) {
-        Reflect(other.GetContact(0).normal);
+    private Vector2 _velocity;
+    private void Start() {
+        _velocity = rb.velocity;
     }
 
-    private void Reflect(Vector2 reflectVector) {
-        Debug.Log("before:" + rb.velocity);
-        rb.velocity = Vector2.Reflect(rb.velocity, reflectVector);
-        Debug.Log("after:" + Vector2.Reflect(rb.velocity, reflectVector));
+    private void OnCollisionEnter2D(Collision2D other) {
+        Reflect(rb, other.GetContact(0).normal);
+    }
+
+    private void Reflect(Rigidbody2D rb, Vector2 reflectVector) {
+        this.rb.velocity = Vector2.Reflect(_velocity * 0.5f, reflectVector);
     }
 }

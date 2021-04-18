@@ -211,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283480443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1770262763}
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockback: {fileID: 1770262773}
-  hp: 10
+  hp: 5
   speed: 50
   energy: 10
   knockbackForce: 10
@@ -855,8 +855,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1770262768}
         m_TargetAssemblyTypeName: EnegyShooter, Assembly-CSharp
-        m_MethodName: onShoot
-        m_Mode: 1
+        m_MethodName: OnShoot
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -940,11 +940,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a4480d54872cb409631e99ad2f44da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInfo: {fileID: 1770262766}
   enegyPrefab: {fileID: 1050936239757738540, guid: 75fc0df08600b784cb77b14d2cfc00bb, type: 3}
   spawnPosition: {fileID: 283480444}
   aim: {fileID: 1770262770}
-  rigidbody: {fileID: 1770262765}
-  speed: 10
+  rb: {fileID: 1770262765}
+  speed: 8
 --- !u!212 &1770262769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1008,8 +1009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7251b2ac495134c86f44539be70a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
-  rigidbody: {fileID: 1770262765}
+  cam: {fileID: 519420031}
+  rb: {fileID: 1770262765}
 --- !u!114 &1770262771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 1770262766}
-  rigidbody: {fileID: 1770262765}
+  rb: {fileID: 1770262765}
 --- !u!114 &1770262773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1770262767}
-  rigidbody: {fileID: 1770262765}
+  rb: {fileID: 1770262765}
   camAnimator: {fileID: 519420030}
   sprite: {fileID: 1770262769}
   duration: 0.3

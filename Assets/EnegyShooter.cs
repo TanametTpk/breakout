@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class EnegyShooter : MonoBehaviour
 {
+    public Player playerInfo;
     public GameObject enegyPrefab;
     public Transform spawnPosition;
     public PlayerAim aim;
@@ -16,6 +17,9 @@ public class EnegyShooter : MonoBehaviour
     }
 
     public void Shoot() {
+        if (!playerInfo.IshaveEnergy()) return;
+        playerInfo.useEnegy(1);
+
         Vector2 aimPosition = aim.getAimPosition();
         Vector2 bodyPosition = rb.position;
         Vector2 targetDirection = aimPosition - bodyPosition;

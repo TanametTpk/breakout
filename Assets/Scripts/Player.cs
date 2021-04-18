@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,10 +27,19 @@ public class Player : MonoBehaviour, Damagable
         if (IsDead()) OnDead.Invoke();
     }
 
+    public void useEnegy(int usageEnegy)
+    {
+        energy = energy - usageEnegy;
+        if (energy < 0) energy = 0;
+    }
+
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("Enemy")) {
             Vector2 difference = other.transform.position - transform.position;
             knockback.perform(difference.normalized * -knockbackForce);
+            
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            enemy.Attack(this);
         }
         else if (other.gameObject.tag.Equals("ball")) {
             Destroy(other.gameObject);
