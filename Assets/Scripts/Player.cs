@@ -11,8 +11,6 @@ public class Player : MonoBehaviour, Damagable
     public float speed;
     public int energy;
     public float knockbackForce = 10;
-    public bool isInvulnerable = false;
-    public UnityEvent OnDead;
 
     public bool IshaveEnergy() {
         return energy > 0;
@@ -23,17 +21,25 @@ public class Player : MonoBehaviour, Damagable
     }
 
     public void WasAttacked(int damage) {
-        if (isInvulnerable) return;
-        
         hp -= damage;
         if (hp < 0) hp = 0;
-        if (IsDead()) OnDead.Invoke();
+        if (IsDead()) EndGame("You are already dead!", "You are so Noob eiei.");
     }
 
     public void useEnegy(int usageEnegy)
     {
         energy = energy - usageEnegy;
         if (energy < 0) energy = 0;
+    }
+
+    private void EndGame(string title, string description) {
+        EndScreen config = new EndScreen();
+
+        config.title = title;
+        config.description = description;
+        config.isVictory = false;
+
+        FindObjectOfType<GameManager>().ShowEndScreen(config);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

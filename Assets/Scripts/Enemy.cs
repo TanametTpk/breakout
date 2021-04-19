@@ -31,13 +31,14 @@ public class Enemy : MonoBehaviour, Attackable, Damagable
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag.Equals("ball")) {
-            WasAttacked(1);
-        }
-
         if (other.gameObject.tag.Equals("Player")) {
             Damagable player = other.gameObject.GetComponent<Damagable>();
+            Dash playerDashSkill = other.gameObject.GetComponent<Dash>();
             Attack(player);
+
+            if (playerDashSkill.isDash) {
+                WasAttacked(2);
+            }
         }
     }
 }

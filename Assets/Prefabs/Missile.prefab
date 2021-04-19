@@ -120,7 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 5
-  rotageSpeed: 200
+  rotageSpeed: 500
+  explosionEffect: {fileID: 7033716734987776084, guid: 5e699cd27587fb449885173df9dcf910, type: 3}
 --- !u!60 &3842054282697759073
 PolygonCollider2D:
   m_ObjectHideFlags: 0

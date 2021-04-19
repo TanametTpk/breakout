@@ -5,11 +5,16 @@ using UnityEngine.Events;
 
 public class BlockManager : MonoBehaviour
 {
-    public UnityEvent OnAllBlocksDestoyed;
     
     public void OnBlockDestroy() {
         if (isAllBlocksDestoyed()) {
-            OnAllBlocksDestoyed.Invoke();
+            EndScreen config = new EndScreen();
+
+            config.title = "Victory!";
+            config.description = "Nice try man!";
+            config.isVictory = true;
+
+            FindObjectOfType<GameManager>().ShowEndScreen(config);
         }
     }
 

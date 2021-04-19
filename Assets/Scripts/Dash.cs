@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 
 public class Dash : MonoBehaviour
 {
-    public Player playerInfo;
     public PlayerMovement movement;
     public Rigidbody2D rb;
     public TrailRenderer trail;
     public float speed = 20;
     public float duration = 0.1f;
     private Vector2 originalVelocity;
+    public bool isDash = false;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class Dash : MonoBehaviour
     }
 
     private void StartDash() {
-        playerInfo.isInvulnerable = true;
+        isDash = true;
         trail.forceRenderingOff = false;
         Vector2 velocity = movement.GetMovingDirection();
         originalVelocity = velocity;
@@ -32,7 +32,7 @@ public class Dash : MonoBehaviour
     }
 
     private void StopDash() {
-        playerInfo.isInvulnerable = false;
+        isDash = false;
         trail.forceRenderingOff = true;
         rb.velocity = originalVelocity;
     }
