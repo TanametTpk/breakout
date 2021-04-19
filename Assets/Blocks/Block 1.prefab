@@ -102,6 +102,7 @@ MonoBehaviour:
   OnDead:
     m_PersistentCalls:
       m_Calls: []
+  explosionEffect: {fileID: 7033716734987776084, guid: 5e699cd27587fb449885173df9dcf910, type: 3}
 --- !u!61 &4061321895325736066
 BoxCollider2D:
   m_ObjectHideFlags: 0

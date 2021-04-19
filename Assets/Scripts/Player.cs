@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour, Damagable
 {
@@ -11,6 +7,14 @@ public class Player : MonoBehaviour, Damagable
     public float speed;
     public int energy;
     public float knockbackForce = 10;
+    public IconBar healthBar;
+    public IconBar energyBar;
+    public Animator camAnimator;
+
+    private void Awake() {
+        healthBar.SetValue(hp);
+        energyBar.SetValue(energy);
+    }
 
     public bool IshaveEnergy() {
         return energy > 0;
@@ -23,13 +27,24 @@ public class Player : MonoBehaviour, Damagable
     public void WasAttacked(int damage) {
         hp -= damage;
         if (hp < 0) hp = 0;
+        Debug.Log("HP:" + hp);
+        healthBar.SetValue(hp);
+        camAnimator.SetTrigger("shake");
+
         if (IsDead()) EndGame("You are already dead!", "You are so Noob eiei.");
     }
 
     public void useEnegy(int usageEnegy)
     {
-        energy = energy - usageEnegy;
-        if (energy < 0) energy = 0;
+        int remainEnergy = energy - usageEnegy;
+        SetEnergy(remainEnergy);
+    }
+
+    public void SetEnergy(int energy) {
+        this.energy = energy;
+        if (this.energy < 0) this.energy = 0;
+
+        energyBar.SetValue(this.energy);
     }
 
     private void EndGame(string title, string description) {
@@ -49,7 +64,7 @@ public class Player : MonoBehaviour, Damagable
         }
         else if (other.gameObject.tag.Equals("ball")) {
             Destroy(other.gameObject);
-            this.energy += 1;
+            SetEnergy(energy + 1);
         }
     }
 }

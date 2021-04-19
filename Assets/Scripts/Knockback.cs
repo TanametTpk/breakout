@@ -7,7 +7,6 @@ public class Knockback : MonoBehaviour
 {
     public PlayerInput playerInput;
     public Rigidbody2D rb;
-    public Animator camAnimator;
     public SpriteRenderer sprite;
     public float duration = 0.3f;
 
@@ -17,7 +16,6 @@ public class Knockback : MonoBehaviour
         sprite.color = Color.red;
         rb.AddForce(force, ForceMode2D.Impulse);
 
-        camAnimator.SetTrigger("shake");
         Invoke("ReleaseKnockback", duration);
     }
 

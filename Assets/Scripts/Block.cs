@@ -5,6 +5,7 @@ using UnityEngine;
 public class Block : Enemy
 {
     private BlockManager blockManager;
+    public GameObject explosionEffect;
 
     private void Start() {
         this.OnDead.AddListener(OnAttacked);
@@ -13,6 +14,7 @@ public class Block : Enemy
 
     public void OnAttacked() {
         if (this.IsDead()) {
+            Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
             blockManager.OnBlockDestroy();
         }   
