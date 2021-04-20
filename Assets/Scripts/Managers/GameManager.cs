@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public struct EndScreen {
     public string title;
@@ -10,7 +9,8 @@ public struct EndScreen {
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    
+    public EndScreen config;
+
     void Awake() {
         if (instance == null){
             instance = this;
@@ -23,9 +23,24 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShowEndScreen(EndScreen config) {
-        // TODO - show end screen logic here.
-        Debug.Log("title:" + config.title);
-        Debug.Log("description:" + config.description);
-        Debug.Log("isVictory:" + config.isVictory.ToString());
+        this.config = config;
+
+        if (config.isVictory) {
+            LoadNextScene();
+        }else {
+            SkipToEndScene();
+        }
+    }
+
+    private void LoadNextScene() {
+        LevelLoader loader = FindObjectOfType<LevelLoader>();
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        StartCoroutine(loader.LoadLevel(sceneIndex));
+    }
+
+    private void SkipToEndScene() {
+        LevelLoader loader = FindObjectOfType<LevelLoader>();
+        int sceneIndex = SceneManager.sceneCountInBuildSettings - 1;
+        StartCoroutine(loader.LoadLevel(sceneIndex));
     }
 }

@@ -30,9 +30,11 @@ public class Player : MonoBehaviour, Damagable
     }
 
     public void WasAttacked(int damage) {
+        if (IsDead()) return;
+
         hp -= damage;
         if (hp < 0) hp = 0;
-        Debug.Log("HP:" + hp);
+        
         healthBar.SetValue(hp);
         camAnimator.SetTrigger("shake");
         DisplayDamge();
