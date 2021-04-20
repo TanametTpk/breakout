@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5815271452268923774}
   - component: {fileID: 5815271452268923773}
   - component: {fileID: 5815271452268923772}
-  - component: {fileID: 5815271452268923771}
   - component: {fileID: 5815271452268923770}
   - component: {fileID: 5815271452268923769}
   - component: {fileID: 5815271452268923768}
@@ -104,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50b38e630ce2194b9ad2821c35c7c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback: {fileID: 5815271452268923771}
+  knockback: {fileID: 0}
   hp: 5
   speed: 25
   energy: 5
@@ -140,22 +139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 5815271452268923774}
   rb: {fileID: 5815271452268923770}
---- !u!114 &5815271452268923771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5815271452268923748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd32c749fd98b44c9c10fa4a2da087f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
-  rb: {fileID: 5815271452268923770}
-  sprite: {fileID: 5815271452268923775}
-  duration: 0.3
 --- !u!50 &5815271452268923770
 Rigidbody2D:
   serializedVersion: 4

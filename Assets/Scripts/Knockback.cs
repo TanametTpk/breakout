@@ -1,26 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Knockback : MonoBehaviour
 {
-    public PlayerInput playerInput;
-    public Rigidbody2D rb;
-    public SpriteRenderer sprite;
+    public float force = 10f;
     public float duration = 0.3f;
 
-    public void perform(Vector2 force) {
-        playerInput.actions.Disable();
-        
-        sprite.color = Color.red;
-        rb.AddForce(force, ForceMode2D.Impulse);
-
-        Invoke("ReleaseKnockback", duration);
-    }
-
-    private void ReleaseKnockback() {
-        playerInput.actions.Enable();
-        sprite.color = Color.white;
+    public void perform(Vector2 direction, Rigidbody2D target) {
+        target.AddForce(direction * -force, ForceMode2D.Impulse);
     }
 }

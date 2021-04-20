@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Enemy : MonoBehaviour, Attackable, Damagable
 {
@@ -34,6 +35,11 @@ public class Enemy : MonoBehaviour, Attackable, Damagable
         if (other.gameObject.tag.Equals("Player")) {
             Damagable player = other.gameObject.GetComponent<Damagable>();
             Dash playerDashSkill = other.gameObject.GetComponent<Dash>();
+            Rigidbody2D playerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+            Knockback knockbackEffect = gameObject.GetComponent<Knockback>();
+
+            Vector2 difference = transform.position - other.transform.position;
+            knockbackEffect.perform(difference.normalized, playerRigidbody);
             Attack(player);
 
             if (playerDashSkill.isDash) {
