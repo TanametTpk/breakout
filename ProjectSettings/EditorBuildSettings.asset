@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scoreboard.unity
     guid: 3bce1aa441977894ebb18e3ce22f55be
+  - enabled: 1
+    path: Assets/Scenes/BonusLevel.unity
+    guid: dbfbfc25a0a79ad4fa6bba3ee986d165
   m_configObjects: {}

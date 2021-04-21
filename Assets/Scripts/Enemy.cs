@@ -41,10 +41,6 @@ public class Enemy : MonoBehaviour, Attackable, Damagable
             Vector2 difference = transform.position - other.transform.position;
             knockbackEffect.perform(difference.normalized, playerRigidbody);
             Attack(player);
-
-            if (playerDashSkill.isDash) {
-                WasAttacked(2);
-            }
         }
     }
 }

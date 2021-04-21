@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
         LoadScene(0);
     }
 
+    public void BonusLevel() {
+        LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+    }
+
     public void PlayGame() {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         LoadScene(sceneIndex);

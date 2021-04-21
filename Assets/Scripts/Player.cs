@@ -9,6 +9,8 @@ public class Player : MonoBehaviour, Damagable
     public IconBar healthBar;
     public IconBar energyBar;
     public Animator camAnimator;
+    [SerializeField]
+    public DeadAction deadAction;
     private SpriteRenderer sprite;
 
     private void Awake() {
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour, Damagable
         DisplayDamge();
 
         if (IsDead()) {
-            EndGame("You are already dead!", "You are so Noob eiei.");
+            deadAction.Perform();
         }
     }
 
@@ -53,16 +55,6 @@ public class Player : MonoBehaviour, Damagable
         if (this.energy < 0) this.energy = 0;
 
         energyBar.SetValue(this.energy);
-    }
-
-    private void EndGame(string title, string description) {
-        EndScreen config = new EndScreen();
-
-        config.title = title;
-        config.description = description;
-        config.isVictory = false;
-
-        FindObjectOfType<GameManager>().ShowEndScreen(config);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

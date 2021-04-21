@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void SkipToEndScene() {
         LevelLoader loader = FindObjectOfType<LevelLoader>();
-        int sceneIndex = SceneManager.sceneCountInBuildSettings - 1;
+        int sceneIndex = SceneManager.sceneCountInBuildSettings - 2;
         StartCoroutine(loader.LoadLevel(sceneIndex));
     }
 }

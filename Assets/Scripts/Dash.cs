@@ -37,4 +37,11 @@ public class Dash : MonoBehaviour
         trail.forceRenderingOff = true;
         rb.velocity = originalVelocity;
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Damagable damagedObj = other.gameObject.GetComponent<Damagable>();
+        if (isDash && damagedObj != null) {
+            damagedObj.WasAttacked(2);
+        }
+    }
 }
