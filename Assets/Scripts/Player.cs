@@ -35,10 +35,11 @@ public class Player : MonoBehaviour, Damagable
         if (hp < 0) hp = 0;
         
         healthBar.SetValue(hp);
-        camAnimator.SetTrigger("shake");
         DisplayDamge();
 
-        if (IsDead()) EndGame("You are already dead!", "You are so Noob eiei.");
+        if (IsDead()) {
+            EndGame("You are already dead!", "You are so Noob eiei.");
+        }
     }
 
     public void useEnegy(int usageEnegy)
@@ -67,11 +68,17 @@ public class Player : MonoBehaviour, Damagable
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("ball")) {
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("PlayerReceiveEnergy");
             SetEnergy(energy + 1);
         }
     }
 
     private void DisplayDamge() {
+        string damageSound = hp > 0 ? "PlayerDamaged" : "PlayerDeath";
+        FindObjectOfType<AudioManager>().Play(damageSound);
+
+        camAnimator.SetTrigger("shake");
+
         sprite.color = Color.red;
         StartCoroutine(OnFinishDamage());
     }

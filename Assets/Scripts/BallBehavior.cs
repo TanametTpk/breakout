@@ -14,6 +14,7 @@ public class BallBehavior : MonoBehaviour, Attackable
 
     private void OnCollisionEnter2D(Collision2D other) {
         Reflect(rb, other.GetContact(0).normal);
+        FindObjectOfType<AudioManager>().Play("BallHit");
 
         if (other.gameObject.tag.Equals("Enemy")) {
             Damagable enemy = other.gameObject.GetComponent<Damagable>();

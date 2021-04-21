@@ -6369,6 +6369,14 @@ PrefabInstance:
       propertyPath: camAnimator
       value: 
       objectReference: {fileID: 1275260796}
+    - target: {fileID: 5815271452268923774, guid: 916364fccfbcc4f48a693f74457fe549, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815271452268923774, guid: 916364fccfbcc4f48a693f74457fe549, type: 3}
+      propertyPath: energy
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916364fccfbcc4f48a693f74457fe549, type: 3}
 --- !u!4 &1243306865 stripped

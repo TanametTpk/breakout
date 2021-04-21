@@ -31,5 +31,6 @@ public class EnegyShooter : MonoBehaviour
         GameObject enegy = Instantiate(enegyPrefab, spawnPosition.position, Quaternion.identity);
         Rigidbody2D rb = enegy.GetComponent<Rigidbody2D>();
         rb.velocity = direction * speed;
+        FindObjectOfType<AudioManager>().Play("FireBall");
     }
 }

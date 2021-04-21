@@ -35,6 +35,7 @@ public class HomingMissile : MonoBehaviour
             if (player && dash && !dash.isDash) {
                 player.WasAttacked(1);
             }
+            FindObjectOfType<AudioManager>().Play("MissleHit");
         }
 
         if (!tag.Equals("Enemy") && !tag.Equals("Missile")) {

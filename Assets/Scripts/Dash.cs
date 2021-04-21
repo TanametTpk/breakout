@@ -29,6 +29,7 @@ public class Dash : MonoBehaviour
         originalVelocity = velocity;
         rb.AddForce(velocity.normalized * speed, ForceMode2D.Impulse);
         Invoke("StopDash", duration);
+        FindObjectOfType<AudioManager>().Play("Dash");
     }
 
     private void StopDash() {
