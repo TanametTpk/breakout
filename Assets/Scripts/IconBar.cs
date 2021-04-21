@@ -8,13 +8,16 @@ public class IconBar : MonoBehaviour
         int currentValues = GetCurrentValues();
         int diff = value - currentValues;
         bool isShouldAdd = diff > 0;
-
-        if (diff == 0) return;
-        for (int i = 0; i < Mathf.Abs(diff); i++)
+        
+        for (int i = 0; i < currentValues; i++)
         {
-            ChangeValue(isShouldAdd);
+            RemoveIcon();
         }
-        currentValues = value;
+
+        for (int i = 0; i < value; i++)
+        {
+            AddIcon();
+        }
     }
 
     public int GetCurrentValues(){
@@ -31,7 +34,9 @@ public class IconBar : MonoBehaviour
 
     private void RemoveIcon() {
         if (transform.childCount < 1) return;
-        Destroy(transform.GetChild(0).gameObject);
+        Transform child = transform.GetChild(0);
+        child.SetParent(null);
+        Destroy(child.gameObject);
     }
 
     private void AddIcon() {

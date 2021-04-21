@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: cf9e75995d5052a4293f78076cede0a2
   - enabled: 1
+    path: Assets/Scenes/TutorialFireball.unity
+    guid: bc18c7c4d2fc44243b0e91fdedfdef31
+  - enabled: 1
+    path: Assets/Scenes/TutorialDash.unity
+    guid: b4c4241d527e4554e990f66229c8b0b0
+  - enabled: 1
+    path: Assets/Scenes/TutorialEnemy.unity
+    guid: 97a8c5444cbae6346955f4bfeb9cca28
+  - enabled: 1
     path: Assets/Scenes/Stage1.unity
     guid: 614fc1bf1bab16b4080602f61767103d
   - enabled: 1

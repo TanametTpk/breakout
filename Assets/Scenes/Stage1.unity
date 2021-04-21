@@ -503,6 +503,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1 (1)
@@ -5407,6 +5415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1 (3)
@@ -5469,6 +5485,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1 (5)
@@ -5667,6 +5691,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1 (4)
@@ -6112,6 +6144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3312525700667957276, guid: 7acabaa3794d1e04fb33545e961679bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3312525700667957279, guid: 7acabaa3794d1e04fb33545e961679bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 581.02637
@@ -6523,6 +6559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7606756326106969585, guid: 84db38dff5fba2b418339d79d310f5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84db38dff5fba2b418339d79d310f5cb, type: 3}
 --- !u!1001 &1844399913
@@ -6532,6 +6572,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1
@@ -6594,6 +6642,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001798221}
     m_Modifications:
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061321895325736068, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4061321895325736070, guid: e396eaf72e2f81f449bbf887a364552e, type: 3}
       propertyPath: m_Name
       value: Block 1 (2)

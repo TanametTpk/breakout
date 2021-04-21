@@ -6,7 +6,6 @@ public class Player : MonoBehaviour, Damagable
     public int hp;
     public float speed;
     public int energy;
-    public float knockbackForce = 10;
     public IconBar healthBar;
     public IconBar energyBar;
     public Animator camAnimator;

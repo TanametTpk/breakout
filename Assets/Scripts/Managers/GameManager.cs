@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     void Awake() {
         if (instance == null){
             instance = this;
+            config = new EndScreen();
+            config.title = "Game Over";
+            config.description = "and you are so noob.";
+            config.isVictory = false;
         }
         else if (instance != this){
             Destroy(gameObject);
